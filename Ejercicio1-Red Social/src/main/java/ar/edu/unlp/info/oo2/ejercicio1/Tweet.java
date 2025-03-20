@@ -9,15 +9,14 @@ public class Tweet implements T_Tweet {
 		this.text = text;
 	}
 
-	public T_Tweet getParent() {
-		return null;
-	}
-
 	@Override
 	public String getText() {
-		
 		return this.text;
 	}
 	
+	public void deleteTweet() {
+		this.text= "El tweet ha sido eliminado";
+	}
+
 	
 }

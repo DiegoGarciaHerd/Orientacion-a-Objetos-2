@@ -1,5 +1,6 @@
 package ar.edu.unlp.info.oo2.ejercicio1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -9,6 +10,7 @@ public class User {
 	
 	public User(String screenName) {
 		super();
+		this.tweets = new ArrayList<T_Tweet>();
 		this.screenName = screenName;
 	}
 	
@@ -39,6 +41,10 @@ public class User {
 		Retweet retweet=new Retweet(tweet);
 		this.tweets.add(retweet);
 		return retweet;
-		
+	}
+	
+	public void removeTweets() {
+		this.tweets.forEach(tweet -> tweet.deleteTweet());
+		this.tweets.clear();
 	}
 }

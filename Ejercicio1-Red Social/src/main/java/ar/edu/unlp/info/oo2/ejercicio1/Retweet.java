@@ -12,11 +12,18 @@ public class Retweet implements T_Tweet{
 		// TODO Auto-generated method stub
 		return "";
 	}
-
-	@Override
+	
 	public T_Tweet getParent() {
 		// TODO Auto-generated method stub
 		return this.parent;
 	}
+
+	@Override
+	public void deleteTweet() {
+		this.parent =null;
+		
+	}
+	
+
 	
 }

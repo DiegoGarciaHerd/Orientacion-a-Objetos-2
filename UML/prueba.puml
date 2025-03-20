@@ -1,0 +1,38 @@
+@startuml
+interface T_Tweet {
+	String getText()
+	T_Tweet getParent()
+}
+
+class Tweet {
+	+Tweet(screenName: String)
+	+T_Tweet getParent()
+	+String getText()
+}
+
+class Retweet {
+	+Retweet(parent: T_Tweet)
+	+String getText()
+	+T_Tweet getParent()
+}
+
+class User {
+	+User(screenName: String)
+	+String getScreenName()
+	+T_Tweet tweet(text: String)
+	+List getTweets()
+	+T_Tweet retweet(tweet T_Tweet)
+}
+
+class Twitter {
+	+User addUser(screenName: String)
+	+void deleteUser(screenName: String)
+}
+
+T_Tweet <|.. Tweet
+T_Tweet <|.. Retweet
+User "0..*" --> T_Tweet : tweets
+Retweet *--> Tweet : - parent
+Twitter "0..*" --> User : users
+
+@enduml
