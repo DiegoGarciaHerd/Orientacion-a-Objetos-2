@@ -1,0 +1,55 @@
+@startuml
+
+class Twitter  {
+	-users: List<User>
+	+Twitter()
+	+addUser(screenName: String): User
+	+deleteUser(screenName: String): void
+	+userExists(screenName: String): boolean
+	+getUsers(): List<User>
+}
+
+
+
+class User {
+	-screenName: String
+	+User(screenName: String)
+	+getScreenName(): String
+	+setScreenName(screenName: String): void
+	+tweet(text: String): T_Tweet
+	+getTweets(): List<T_Tweet>
+	+retweet(tweet: T_Tweet): T_Tweet
+	+removeTweets(): void
+}
+
+
+
+Twitter "0..*" -->  User : users
+
+User "0..*" --> T_Tweet : tweets
+class Tweet {
+	-text: String
+	+Tweet(text: String)
+	+getParent(): T_Tweet
+	+getText(): String
+	+deleteTweet(): void
+}
+
+interface T_Tweet {
+	getText(): String
+	deleteTweet(): void
+}
+T_Tweet <|.. Tweet
+
+
+
+class Retweet [[java:ar.edu.unlp.info.oo2.ejercicio1.Retweet]] {
+	+deleteTweet(): void
+	+Retweet(parent: T_Tweet)
+	+getText(): String
+	+getParent(): T_Tweet
+}
+
+T_Tweet <|.. Retweet
+Retweet --> Tweet : parent
+@enduml

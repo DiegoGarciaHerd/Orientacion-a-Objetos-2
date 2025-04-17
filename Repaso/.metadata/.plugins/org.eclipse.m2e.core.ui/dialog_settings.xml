@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\diego\OneDrive\2025\Orientacion a Objetos II\OO2-Repo"/>
+			<item value="C:\Users\diego\OneDrive\Facultad\UNLP-Informatica\3er año\Orientacion a Objetos II\OO2-Repo\Ejercicio6-Topografias\src\main\java\ar\edu\unlp\info\oo2\Ejercicio6_Topografias\TopografiaMixta.java"/>
+			<item value="C:\Users\diego\OneDrive\Facultad\UNLP-Informatica\3er año\Orientacion a Objetos II\OO2-Repo\Ejercicio4-CalculoSueldos"/>
+			<item value="C:\Users\diego\Downloads\biblioteca\ej-biblioteca"/>
+			<item value="C:\Users\diego\OO2 Provisional\Typecasting"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="defaultLocal"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="ar.edu.unlp.info.oo2.Ejercicio2_PiedraPapelTijera"/>
+			<item value="ar.edu.unlp.info.oo2.Ejercicio7_FileSystem"/>
+			<item value="ar.edu.unlp.info.oo2.Ejercicio6_Topografias"/>
+			<item value="ar.edu.unlp.info.oo2.Ejercicio4_CalculoSueldos"/>
+		</list>
+		<list key="groupId">
+			<item value="ar.edu.unlp.info.oo2"/>
+		</list>
+		<list key="artifactId">
+			<item value="Ejercicio2-PiedraPapelTijera"/>
+			<item value="Ejercicio7-FileSystem"/>
+			<item value="Ejercicio6-Topografias"/>
+			<item value="Ejercicio4-CalculoSueldos"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.CustomArchetypeDialog">
+		<list key="archetypeGroupId">
+			<item value="ar.edu.unlp.info.oo2"/>
+		</list>
+		<list key="archetypeArtifactId">
+			<item value="objetos-dos"/>
+		</list>
+		<list key="archetypeVersion">
+			<item value="0.0.2"/>
+		</list>
+		<list key="repositoryUrl">
+			<item value="https://github.com/unlp-info-objetos/oo2-2022/blob/main/oo2_archetype-archetype-0.0.2/oo2_archetype-archetype-0.0.2.jar?raw=true"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\diego\OneDrive\Facultad\UNLP-Informatica\3er año\Orientacion a Objetos II\OO2-Repo\Ejercicio7-FileSystem"/>
+			<item value="C:\Users\diego\Downloads\biblioteca"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

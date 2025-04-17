@@ -1,0 +1,3 @@
+INDEX VERSION 1.134+C:\Users\diego\OneDrive\2025\Orientacion a Objetos II\OO2-Repo\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+237914425.index

@@ -1,0 +1,68 @@
+@startuml
+class Lagarto {
+	+play(jugada: Jugada): String
+	+playPiedra(): String
+	+playPapel(): String
+	+playTijera(): String
+	+playLagarto(): String
+	+playSpock(): String
+}
+interface Jugada {
+}
+Jugada <|.. Lagarto
+class Piedra  {
+	+play(jugada: Jugada): String
+	+playTijera(): String
+	+playPiedra(): String
+	+playPapel(): String
+	+playSpock(): String
+	+playLagarto(): String
+}
+interface Jugada {
+}
+Jugada <|.. Piedra
+class Game  {
+	+play(jugada1: Jugada, jugada2: Jugada): String
+}
+interface Jugada {
+	play(jugada: Jugada): String
+	playTijera(): String
+	playPiedra(): String
+	playPapel(): String
+	playSpock(): String
+	playLagarto(): String
+}
+class Spock  {
+	+play(jugada: Jugada): String
+	+playPiedra(): String
+	+playPapel(): String
+	+playTijera(): String
+	+playLagarto(): String
+	+playSpock(): String
+}
+interface Jugada {
+}
+Jugada <|.. Spock
+class Tijera  {
+	+play(jugada: Jugada): String
+	+playTijera(): String
+	+playPiedra(): String
+	+playPapel(): String
+	+playLagarto(): String
+	+playSpock(): String
+}
+interface Jugada {
+}
+Jugada <|.. Tijera
+class Papel  {
+	+play(jugada: Jugada): String
+	+playTijera(): String
+	+playPiedra(): String
+	+playPapel(): String
+	+playLagarto(): String
+	+playSpock(): String
+}
+interface Jugada {
+}
+Jugada <|.. Papel
+@enduml
