@@ -9,6 +9,12 @@ public class Pending extends StateTDI {
 	public void togglePause(ToDoItem item) {
 		throw new RuntimeException("El objeto ToDoItem no se encuentra en pause o in-progress");
 	}
+
+	@Override
+	public void finish(ToDoItem toDoItem) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }
