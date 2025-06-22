@@ -4,7 +4,5 @@ import java.util.List;
 
 public abstract class Strategy { 
 	
-	
-	
 	public abstract void sugerir(List<Pelicula> peliculas);
 }

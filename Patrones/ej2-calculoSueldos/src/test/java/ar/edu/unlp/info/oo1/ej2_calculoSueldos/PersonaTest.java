@@ -11,21 +11,30 @@ import org.junit.jupiter.api.Test;
  */
 public class PersonaTest {
 	
-	Persona james, guido;
+	Empleado guido;
+	Empleado ruso;
+	Empleado thiago;
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		james = new Persona();
-		guido = new Persona();
-		james.setApellido("Gosling");
-		james.setNombre("James");
-		guido.setApellido("van Rossum");
-		guido.setNombre("Guido");
+		guido= new Pasante(100,"Casado",3,5,2);
+		ruso= new Planta(100,"Casado",3,5);
+		thiago = new Temporario(100,"Casado",3,5);
 	}
 	
     @Test
-    public void testNombreCompleto() {
-        assertEquals("Gosling, James", james.getNombreCompleto());
-        assertEquals("van Rossum, Guido", guido.getNombreCompleto());
+    public void testPasante() {
+        assertEquals(guido.sueldo(), 21200);
+ 
+    }
+    
+    @Test
+    public void testPlanta() { 
+    	assertEquals(ruso.sueldo(), 63450);
+    }
+    
+    @Test
+    public void testTemporario() { 
+    	assertEquals(thiago.sueldo(), 53950);
     }
 }

@@ -7,7 +7,7 @@ public class MediaPlayer {
 	private List<Media> media;
 	
 	public MediaPlayer() {
-		this.media = new ArrayList<MediaPlayer>();
+		this.media = new ArrayList<Media>();
 	}
 	
 	public void play() {

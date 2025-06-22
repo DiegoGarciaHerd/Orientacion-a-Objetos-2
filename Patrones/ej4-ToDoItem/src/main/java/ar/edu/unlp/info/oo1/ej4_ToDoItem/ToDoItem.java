@@ -46,7 +46,7 @@ public class ToDoItem {
 	* genera un error informando la causa específica del mismo.
 	*/
 	        public Duration workedTime( ) {
-	        	Duration.
+	        	
 	        }
 
 
