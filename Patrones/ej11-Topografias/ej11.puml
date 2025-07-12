@@ -1,0 +1,36 @@
+@startuml
+class Tierra <<Leaf>> [[java:ar.edu.unlp.info.oo2.ej11_Topografias.Tierra]] {
+	+proporcionDeAgua(): double
+}
+abstract class Topografia {
+}
+Topografia <|-- Tierra
+class Agua <<Leaf>> [[java:ar.edu.unlp.info.oo2.ej11_Topografias.Agua]] {
+	+proporcionDeAgua(): double
+}
+abstract class Topografia {
+}
+Topografia <|-- Agua
+abstract class Topografia [[java:ar.edu.unlp.info.oo2.ej11_Topografias.Topografia]] {
+	+{abstract} proporcionDeAgua(): double
+	+getTopografia(): Object
+	+isEquals(topografia: Topografia): boolean
+	+equals(objeto: Object): boolean
+}
+class Mixta <<Composite>>[[java:ar.edu.unlp.info.oo2.ej11_Topografias.Mixta]] {
+	+Mixta()
+	+Mixta(topografia1: Topografia, topografia2: Topografia, topografia3: Topografia, topografia4: Topografia)
+	+add(componente: Topografia): void
+	+proporcionDeAgua(): double
+	+isEquals(topografia: Topografia): boolean
+}
+abstract class Topografia <<Component>> {
+}
+Mixta --> "*" Topografia : topografias
+abstract class Topografia {
+}
+Mixta --> "*" Topografia : getTopografia()
+abstract class Topografia {
+}
+Topografia <|-- Mixta
+@enduml

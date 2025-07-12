@@ -1,22 +1,50 @@
 @startuml
-class Pending [[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.Pending]] {
-	+start(item: ToDoItem): void
-	+togglePause(item: ToDoItem): void
-	+finish(toDoItem: ToDoItem): void
+abstract class StateTDI [[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.StateTDI]] {
+	+StateTDI(task: ToDoItem)
+	+start(): void
+	+{abstract} togglePause(): void
+	+finish(): void
+	#{abstract} workedTime(): Duration
+	+addComment(comment: String): void
+}
+class ToDoItem <<Context>> {
+}
+StateTDI --> "1" ToDoItem : task
+class ToDoItem {
+}
+StateTDI --> "1" ToDoItem : getTask()
+class InProgress <<ConcreteState>> [[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.InProgress]] {
+	+InProgress(task: ToDoItem)
+	+togglePause(): void
+	+finish(): void
+	+workedTime(): Duration
+}
+abstract class StateTDI {
+}
+StateTDI <|-- InProgress
+class Paused <<ConcreteState>>[[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.Paused]] {
+	+Paused(task: ToDoItem)
+	+togglePause(): void
+	+finish(): void
+	+workedTime(): Duration
+}
+class StateTDI <<State>> {
+}
+StateTDI <|-- Paused
+class Pending <<ConcreteState>>[[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.Pending]] {
+	+Pending(task: ToDoItem)
+	+start(): void
+	+togglePause(): void
+	+workedTime(): Duration
 }
 abstract class StateTDI {
 }
 StateTDI <|-- Pending
-class Finished [[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.Finished]] {
-	+togglePause(item: ToDoItem): void
-	+start(item: ToDoItem): void
-	+finish(toDoItem: ToDoItem): void
-}
-abstract class StateTDI {
-}
-StateTDI <|-- Finished
 class ToDoItem [[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.ToDoItem]] {
 	-name: String
+	-startDate: LocalDate
+	-endDate: LocalDate
+	-comments: List<String>
 	+ToDoItem(name: String)
 	+start(): void
 	+togglePause(): void
@@ -24,29 +52,25 @@ class ToDoItem [[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.ToDoItem]] {
 	+workedTime(): Duration
 	+addComment(comment: String): void
 	+setState(state: StateTDI): void
+	+setStartDate(): void
+	+setEndDate(): void
+	+getStartDate(): LocalDate
+	+getEndDate(): LocalDate
+	+getComments(): List<String>
 }
 abstract class StateTDI {
 }
 ToDoItem --> "1" StateTDI : state
-abstract class StateTDI [[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.StateTDI]] {
-	+{abstract} start(item: ToDoItem): void
-	+{abstract} togglePause(toDoItem: ToDoItem): void
-	+{abstract} finish(toDoItem: ToDoItem): void
+abstract class StateTDI {
 }
-class Paused [[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.Paused]] {
-	+togglePause(item: ToDoItem): void
-	+start(item: ToDoItem): void
-	+finish(item: ToDoItem): void
+ToDoItem --> "1" StateTDI : getState()
+class Finished <<ConcreteState>> [[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.Finished]] {
+	+Finished(task: ToDoItem)
+	+togglePause(): void
+	+workedTime(): Duration
+	+addComment(comment: String): void
 }
 abstract class StateTDI {
 }
-StateTDI <|-- Paused
-class InProgress [[java:ar.edu.unlp.info.oo1.ej4_ToDoItem.InProgress]] {
-	+togglePause(item: ToDoItem): void
-	+start(item: ToDoItem): void
-	+finish(item: ToDoItem): void
-}
-abstract class StateTDI {
-}
-StateTDI <|-- InProgress
+StateTDI <|-- Finished
 @enduml

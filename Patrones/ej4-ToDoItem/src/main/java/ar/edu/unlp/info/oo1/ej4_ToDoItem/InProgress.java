@@ -1,20 +1,31 @@
 package ar.edu.unlp.info.oo1.ej4_ToDoItem;
 
+import java.time.Duration;
+import java.time.LocalDate;
+
 public class InProgress extends StateTDI {
-	
-	public void togglePause(ToDoItem item) {
-		item.setState(new Paused());
-	}
-
-	@Override
-	public void start(ToDoItem item) {
-		// TODO Auto-generated method stub
 		
-	}
+		public InProgress(ToDoItem task) {
+			super(task);
+			this.getTask().setStartDate();
+		}
 
-	@Override
-	public void finish(ToDoItem item) {
-		item.setState(new Finished());
+		@Override
+		public void togglePause() {
+			ToDoItem task = this.getTask();
+			task.setState(new Paused(task));
+		}
+
+		@Override
+		public void finish() {
+			ToDoItem task = this.getTask();
+			task.setState(new Finished(task));
+		}
 		
-	}
+		@Override
+		public Duration workedTime() {
+			return Duration.between(this.getTask().getStartDate(), LocalDate.now());
+		}
+
+
 }

@@ -1,4 +1,4 @@
-package ar.edu.unlp.info.oo2.ej15_ArmadoPCs;
+ package ar.edu.unlp.info.oo2.ej15_ArmadoPCs;
 
 public class BuilderIntermedio extends BuilderPC {
 	@Override

@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Archivo extends Componente {
-
+	private int cantBytes;
 	
 	@Override
-	public double getTamanio() {
-		return this.getCantBytes();
+	public int getTamanio() {
+		return this.cantBytes;
 	}
 
 	@Override
@@ -20,7 +20,8 @@ public class Archivo extends Componente {
 	public Archivo archivoMasNuevo() {
 		return this;
 	}
-
+	
+	
 	@Override
 	public Componente buscar(String nombre) {
 		return this.compareName(nombre) ? this : null;
@@ -34,9 +35,11 @@ public class Archivo extends Componente {
         return prefijo + this.getNombre() + "\n";
     }
 
+
 	@Override
-	public int getCantBytes() {
+	protected void buscarEnHijos(String nombre, List<Componente> lista) {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
+	
 }

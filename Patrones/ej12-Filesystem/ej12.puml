@@ -1,0 +1,72 @@
+@startuml
+class Archivo [[java:ar.edu.unlp.info.oo2.ej12_Filesystem.Archivo]] {
+	-cantBytes: int
+	+getTamanio(): int
+	+buscar(nombre: String): Componente
+	+buscarTodos(nombre: String, lista: List<Componente>): void
+	+listadoDeContenido(prefijo: String): String
+	#buscarEnHijos(nombre: String, lista: List<Componente>): void
+}
+class Archivo <<Leaf>>{
+}
+Archivo --> "1" Archivo : archivoMasGrande()
+class Archivo {
+}
+Archivo --> "1" Archivo : archivoMasNuevo()
+class Componente  <<Componente>> {
+}
+Componente <|-- Archivo
+abstract class Componente [[java:ar.edu.unlp.info.oo2.ej12_Filesystem.Componente]] {
+	-nombre: String
+	-fechaCreacion: LocalDate
+	+getNombre(): String
+	+setNombre(nombre: String): void
+	+getFechaCreacion(): LocalDate
+	+setFechaCreacion(fechaCreacion: LocalDate): void
+	+{abstract} getTamanio(): int
+	+{abstract} buscar(nombre: String): Componente
+	+buscarTodos(nombre: String, lista: List<Componente>): void
+	#{abstract} buscarEnHijos(nombre: String, lista: List<Componente>): void
+	+{abstract} listadoDeContenido(s: String): String
+	+compareName(nombre: String): boolean
+}
+class Archivo {
+}
+Componente --> "1" Archivo : archivoMasNuevo()
+class Archivo {
+}
+Componente --> "1" Archivo : archivoMasGrande()
+class Directorio <<Composite>> [[java:ar.edu.unlp.info.oo2.ej12_Filesystem.Directorio]] {
+	+getTamanio(): int
+	+buscar(nombre: String): Componente
+	+buscarTodos(nombre: String, lista: List<Componente>): void
+	+listadoDeContenido(nombre: String): String
+}
+class Componente {
+}
+Directorio --> "*" Componente : contenido
+class Archivo {
+}
+Directorio --> "1" Archivo : archivoMasNuevo()
+class Archivo {
+}
+Directorio --> "1" Archivo : archivoMasGrande()
+class Componente {
+}
+Componente <|-- Directorio
+class Filesystem [[java:ar.edu.unlp.info.oo2.ej12_Filesystem.Filesystem]] {
+	+tamanoTotalOcupado(): int
+	+buscar(nombre: String): Componente
+	+buscarTodos(nombre: String): List<Componente>
+	+listadoDeContenido(): String
+}
+abstract class Componente {
+}
+Filesystem --> "1" Componente : raiz
+class Archivo {
+}
+Filesystem --> "1" Archivo : archivoMasGrande()
+class Archivo {
+}
+Filesystem --> "1" Archivo : archivoMasNuevo()
+@enduml

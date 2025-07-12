@@ -10,7 +10,7 @@ public class Filesystem {
 	   * Retorna el espacio total ocupado, incluyendo todo su contenido.
 	   */
 	  public int tamanoTotalOcupado() {
-		  return raiz.getCantBytes();
+		  return raiz.getTamanio();
 	  }
 
 	  /**

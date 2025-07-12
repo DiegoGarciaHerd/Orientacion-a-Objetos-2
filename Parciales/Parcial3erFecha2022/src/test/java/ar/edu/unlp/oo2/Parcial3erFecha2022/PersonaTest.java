@@ -1,11 +1,9 @@
-package ar.edu.unlp.info.oo2.ej9_Topografias;
+package ar.edu.unlp.oo2.Parcial3erFecha2022;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import ar.edu.unlp.info.oo2.ej11_Topografias.Persona;
 
 /**
  * Aca escribiremos los test de unidad para cada clase 

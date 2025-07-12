@@ -1,0 +1,37 @@
+@startuml
+skinparam classFontSize 13
+
+class VideoStream [[java:ar.edu.unlp.info.oo1.ej3_mediaPlayer.VideoStream]] {
+	+reproduce(): void
+}
+class MediaPlayer <<Client>>[[java:ar.edu.unlp.info.oo1.ej3_mediaPlayer.MediaPlayer]] {
+	+MediaPlayer()
+	+play(): void
+}
+class Media {
+}
+MediaPlayer --> "*" Media : media
+abstract class Media <<Target>> [[java:ar.edu.unlp.info.oo1.ej3_mediaPlayer.Media]] {
+	+{abstract} play(): void
+}
+class VideoFile [[java:ar.edu.unlp.info.oo1.ej3_mediaPlayer.VideoFile]] {
+	+play(): void
+}
+
+Media <|-- VideoFile
+class VideoStreamAdapter <<Adapter>> [[java:ar.edu.unlp.info.oo1.ej3_mediaPlayer.VideoStreamAdapter]] {
+	+play(): void
+}
+class VideoStream <<adaptee>>{
+}
+VideoStreamAdapter --> "1" VideoStream : videoStream <<adaptee>>
+class Media {
+}
+Media <|-- VideoStreamAdapter
+class Audio [[java:ar.edu.unlp.info.oo1.ej3_mediaPlayer.Audio]] {
+	+play(): void
+}
+class Media {
+}
+Media <|-- Audio
+@enduml

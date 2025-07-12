@@ -1,0 +1,53 @@
+@startuml
+class Pelicula [[java:ar.edu.unlp.info.oo1.ej5_DecodificadorPeliculas.Pelicula]] {
+	-titulo: String
+	-añoEstreno: int
+	-puntaje: double
+	+getTitulo(): String
+	+setTitulo(titulo: String): void
+	+getAñoEstreno(): int
+	+setAñoEstreno(añoEstreno: int): void
+	+getPuntaje(): double
+}
+class Pelicula {
+}
+Pelicula --> "*" Pelicula : similares
+class Pelicula {
+}
+Pelicula --> "*" Pelicula : getSimilares()
+abstract class Strategy [[java:ar.edu.unlp.info.oo1.ej5_DecodificadorPeliculas.Strategy]] {
+	+{abstract} sugerir(peliculas: List<Pelicula>): void
+}
+class Novedad [[java:ar.edu.unlp.info.oo1.ej5_DecodificadorPeliculas.Novedad]] {
+	+sugerir(peliculas: List<Pelicula>): void
+}
+class Strategy {
+}
+Strategy <|-- Novedad
+class Puntaje [[java:ar.edu.unlp.info.oo1.ej5_DecodificadorPeliculas.Puntaje]] {
+	+sugerir(peliculas: List<Pelicula>): void
+}
+class Strategy {
+}
+Strategy <|-- Puntaje
+class Similaridad [[java:ar.edu.unlp.info.oo1.ej5_DecodificadorPeliculas.Similaridad]] {
+	+sugerir(peliculas: List<Pelicula>): void
+}
+class Strategy {
+}
+Strategy <|-- Similaridad
+class Decodificador <<Context>> [[java:ar.edu.unlp.info.oo1.ej5_DecodificadorPeliculas.Decodificador]] {
+	+Decodificador(peliculas: List<Pelicula>, reproducidas: List<Pelicula>)
+	+sugerir(): void
+	+setStrategy(strategy: Strategy): void
+}
+class Pelicula {
+}
+Decodificador --> "*" Pelicula : peliculas
+class Pelicula {
+}
+Decodificador --> "*" Pelicula : reproducidas
+class Strategy <<Stategy>> {
+}
+Decodificador --> "1" Strategy : strategy
+@enduml

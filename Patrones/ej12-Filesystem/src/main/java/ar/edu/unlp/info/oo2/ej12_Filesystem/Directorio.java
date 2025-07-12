@@ -9,8 +9,8 @@ public class Directorio extends Componente {
 	private List<Componente> contenido;
 	
 	
-	public int getCantBytes() {
-		return 32000 + contenido.stream().mapToInt(c -> c.getCantBytes()).sum();
+	public int getTamanio() {
+		return 32000 + contenido.stream().mapToInt(c -> c.getTamanio()).sum();
 	}
 	
 	public Archivo archivoMasNuevo() {

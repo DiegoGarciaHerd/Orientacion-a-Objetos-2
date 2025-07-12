@@ -1,0 +1,93 @@
+@startuml
+class ExtensionDecorator <<Concrete Decorator>>[[java:ar.edu.unlp.info.oo2.ej18_FileManager.ExtensionDecorator]] {
+	+ExtensionDecorator(file: File)
+	+prettyPrint(): String
+}
+class FileDecorator <<Decorator>>{
+}
+FileDecorator <|-- ExtensionDecorator
+class NombreDecorator <<Concrete Decorator>> [[java:ar.edu.unlp.info.oo2.ej18_FileManager.NombreDecorator]] {
+	+NombreDecorator(file: File)
+	+prettyPrint(): String
+}
+class FileDecorator {
+}
+FileDecorator <|-- NombreDecorator
+class FileDecorator [[java:ar.edu.unlp.info.oo2.ej18_FileManager.FileDecorator]] {
+	+FileDecorator(file: File)
+	+prettyPrint(): String
+	+getNombre(): String
+	+getExtension(): String
+	+getFechaCreacion(): LocalDate
+	+getFechaModificacion(): LocalDate
+	+getTamaño(): int
+	+getPermisos(): String
+}
+class File <<Component>> {
+}
+FileDecorator --> "1" File : file
+interface File {
+}
+File <|.. FileDecorator
+class FechaModificacionDecorator <<Concrete Decorator>> [[java:ar.edu.unlp.info.oo2.ej18_FileManager.FechaModificacionDecorator]] {
+	+FechaModificacionDecorator(file: File)
+	+prettyPrint(): String
+}
+class FileDecorator {
+}
+FileDecorator <|-- FechaModificacionDecorator
+class PermisosDecorator <<Concrete Component>> [[java:ar.edu.unlp.info.oo2.ej18_FileManager.PermisosDecorator]] {
+	+PermisosDecorator(file: File)
+	+prettyPrint(): String
+}
+class FileDecorator {
+}
+FileDecorator <|-- PermisosDecorator
+class TamañoDecorator <<Concrete Decorator>> [[java:ar.edu.unlp.info.oo2.ej18_FileManager.TamañoDecorator]] {
+	+TamañoDecorator(file: File)
+	+prettyPrint(): String
+}
+class FileDecorator {
+}
+FileDecorator <|-- TamañoDecorator
+class FechaCreacionDecorator <<Concrete Decorator>> [[java:ar.edu.unlp.info.oo2.ej18_FileManager.FechaCreacionDecorator]] {
+	+FechaCreacionDecorator(file: File)
+	+prettyPrint(): String
+}
+class FileDecorator {
+}
+FileDecorator <|-- FechaCreacionDecorator
+interface File [[java:ar.edu.unlp.info.oo2.ej18_FileManager.File]] {
+	prettyPrint(): String
+	getNombre(): String
+	getExtension(): String
+	getFechaCreacion(): LocalDate
+	getFechaModificacion(): LocalDate
+	getTamaño(): int
+	getPermisos(): String
+}
+class FileOO2 <<Concrete Component>>[[java:ar.edu.unlp.info.oo2.ej18_FileManager.FileOO2]] {
+	~nombre: String
+	~extension: String
+	~tamaño: int
+	~fechaCreacion: LocalDate
+	~fechaModificacion: LocalDate
+	~permisos: String
+	+prettyPrint(): String
+	+getNombre(): String
+	+setNombre(nombre: String): void
+	+getExtension(): String
+	+setExtension(extension: String): void
+	+getTamaño(): int
+	+setTamaño(tamaño: int): void
+	+getFechaCreacion(): LocalDate
+	+setFechaCreacion(fechaCreacion: LocalDate): void
+	+getFechaModificacion(): LocalDate
+	+setFechaModificacion(fechaModificacion: LocalDate): void
+	+getPermisos(): String
+	+setPermisos(permisos: String): void
+}
+interface File <<Component>>{
+}
+File <|.. FileOO2
+@enduml

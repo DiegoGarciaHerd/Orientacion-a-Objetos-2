@@ -1,0 +1,11 @@
+@startuml
+
+class Excursion {
+}
+
+abstract class EstadoExcursion {
+
+}
+
+Excursion --> EstadoExcursion 
+@enduml

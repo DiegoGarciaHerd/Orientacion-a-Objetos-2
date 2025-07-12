@@ -6,7 +6,6 @@ import java.util.List;
 public abstract class Componente {
 	private String nombre;
 	private LocalDate fechaCreacion;
-	private int cantBytes;
 	
 	
 	public String getNombre() {
@@ -21,7 +20,8 @@ public abstract class Componente {
 	public void setFechaCreacion(LocalDate fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
-	public abstract int getCantBytes() ;
+	
+	public abstract int getTamanio();
 	
 	public abstract Archivo archivoMasNuevo();
 	
@@ -29,8 +29,16 @@ public abstract class Componente {
 	
 	public abstract Archivo archivoMasGrande();
 	
-	public abstract void buscarTodos(String nombre,List<Componente> l);
+	public void buscarTodos(String nombre, List<Componente> lista) {
+		if (this.compareName(nombre)) lista.add(this);
+		this.buscarEnHijos(nombre, lista);
+	}
+	
+	protected abstract void buscarEnHijos(String nombre, List<Componente> lista);
 	
 	public abstract String listadoDeContenido(String s);
 	
+	public boolean compareName(String nombre) {
+		return this.nombre.equals(nombre);
+	}
 }

@@ -1,0 +1,99 @@
+@startuml
+class SubteWay <<Director>>[[java:ar.edu.unlp.info.oo2.ej13_SubteWay.SubteWay]] {
+	+<<create>> SubteWay() : SubteWay
+	+SubteWay(builder: SandwichBuilder)
+	+setBuilder(builder: SandwichBuilder): void
+}
+class SandwichBuilder {
+}
+SubteWay --> "1" SandwichBuilder : builder
+class SandwichBuilder {
+}
+SubteWay --> "1" SandwichBuilder : getBuilder()
+class Sandwich {
+}
+SubteWay --> "1" Sandwich : prepararSandwich()
+class BuilderClasico <<ConcreteBuilder>>[[java:ar.edu.unlp.info.oo2.ej13_SubteWay.BuilderClasico]] {
+	+prepararPan(): void
+	+prepararAderezo(): void
+	+prepararPrincipal(): void
+	+prepararAdicional(): void
+}
+class SandwichBuilder {
+}
+SandwichBuilder <|-- BuilderClasico
+class Script [[java:ar.edu.unlp.info.oo2.ej13_SubteWay.Script]] {
+	+{static} main(args: String[]): void
+}
+class Sandwich [[java:ar.edu.unlp.info.oo2.ej13_SubteWay.Sandwich]] {
+	-pan: String
+	-precioPan: double
+	-aderezo: String
+	-precioAderezo: double
+	-principal: String
+	-precioPrincipal: double
+	-adicional: String
+	-precioAdicional: double
+	+getPan(): String
+	+setPan(pan: String): void
+	+getPrecioPan(): double
+	+setPrecioPan(precioPan: double): void
+	+getAderezo(): String
+	+setAderezo(aderezo: String): void
+	+getPrecioAderezo(): double
+	+setPrecioAderezo(precioAderezo: double): void
+	+getPrincipal(): String
+	+setPrincipal(principal: String): void
+	+getPrecioPrincipal(): double
+	+setPrecioPrincipal(precioPrincipal: double): void
+	+getAdicional(): String
+	+setAdicional(adicional: String): void
+	+getPrecioAdicional(): double
+	+setPrecioAdicional(precioAdicional: double): void
+	+calcularPrecio(): double
+}
+abstract class SandwichBuilder [[java:ar.edu.unlp.info.oo2.ej13_SubteWay.SandwichBuilder]] {
+	+setSandwich(sandwich: Sandwich): void
+	+empezar(): void
+	+{abstract} prepararPan(): void
+	+{abstract} prepararAderezo(): void
+	+{abstract} prepararPrincipal(): void
+	+{abstract} prepararAdicional(): void
+}
+class Sandwich {
+}
+SandwichBuilder --> "1" Sandwich : sandwich
+class Sandwich {
+}
+SandwichBuilder --> "1" Sandwich : getSandwich()
+class Sandwich <<Product>> {
+}
+SandwichBuilder --> "1" Sandwich : empaquetar()
+class BuilderSinTACC <<ConcreteBuilder>> [[java:ar.edu.unlp.info.oo2.ej13_SubteWay.BuilderSinTACC]] {
+	+prepararPan(): void
+	+prepararAderezo(): void
+	+prepararPrincipal(): void
+	+prepararAdicional(): void
+}
+class SandwichBuilder {
+}
+SandwichBuilder <|-- BuilderSinTACC
+class BuilderVegano <<ConcreteBuilder>>[[java:ar.edu.unlp.info.oo2.ej13_SubteWay.BuilderVegano]] {
+	+prepararPan(): void
+	+prepararAderezo(): void
+	+prepararPrincipal(): void
+	+prepararAdicional(): void
+}
+class SandwichBuilder {
+}
+SandwichBuilder <|-- BuilderVegano
+class BuilderVegetariano <<ConcreteBuilder>>[[java:ar.edu.unlp.info.oo2.ej13_SubteWay.BuilderVegetariano]] {
+	+prepararPan(): void
+	+prepararAderezo(): void
+	+prepararPrincipal(): void
+	+prepararAdicional(): void
+}
+class SandwichBuilder <<Builder>> {
+}
+SandwichBuilder <|-- BuilderVegetariano
+@enduml

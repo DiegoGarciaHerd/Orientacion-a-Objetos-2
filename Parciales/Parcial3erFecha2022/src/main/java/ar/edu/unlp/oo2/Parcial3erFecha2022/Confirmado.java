@@ -1,0 +1,6 @@
+package ar.edu.unlp.oo2.Parcial3erFecha2022;
+
+public class Confirmado extends Etapa {
+
+	
+}
